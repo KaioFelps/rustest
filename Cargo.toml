@@ -1,0 +1,10 @@
+[package]
+name = "rustest"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = ["rustest_core"]
+
+[dependencies]
+rustest_core = { path = "rustest_core" }
