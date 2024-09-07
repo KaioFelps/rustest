@@ -10,7 +10,7 @@ pub trait UnshiftTrait<T> {
     assert_eq!(Some(10), v.unshift());
     assert_eq!(vec![40, 30], v);
 
-    let w: Vec<i32> = vec![];
+    let mut w: Vec<i32> = vec![];
     assert_eq!(None, w.unshift());
     ```
      */
