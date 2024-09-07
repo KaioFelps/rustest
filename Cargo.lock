@@ -12,3 +12,10 @@ dependencies = [
 [[package]]
 name = "rustest_core"
 version = "0.1.0"
+
+[[package]]
+name = "tests"
+version = "0.1.0"
+dependencies = [
+ "rustest_core",
+]
