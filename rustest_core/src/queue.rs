@@ -1,10 +1,10 @@
 use crate::extension_traits::vec::UnshiftTrait;
 
-pub struct FIFOQueue<T: Clone> {
+pub struct FIFOQueue<T> {
     list: Vec<T>
 }
 
-impl<T: Clone> FIFOQueue<T> {
+impl<T> FIFOQueue<T> {
     /**-
     Instantiates a new instance of FIFOQueue
     */
@@ -18,9 +18,6 @@ impl<T: Clone> FIFOQueue<T> {
     Gets the next element from the queue to be attended.
 
     The element will be removed from the queue as its fetched.
-
-    Note that `T` must implement `Clone` trait (so that the element can
-    be successfully removed from the queue).
      */
     pub fn dequeue(&mut self) -> Option<T> {
         self.list.unshift()
@@ -48,7 +45,7 @@ impl<T: Clone> FIFOQueue<T> {
     }
 }
 
-impl<T: Clone> From<Vec<T>> for FIFOQueue<T> {
+impl<T> From<Vec<T>> for FIFOQueue<T> {
     fn from(v: Vec<T>) -> Self {
         FIFOQueue {
             list: v
