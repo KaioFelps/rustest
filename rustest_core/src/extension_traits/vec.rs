@@ -17,17 +17,12 @@ pub trait UnshiftTrait<T> {
     fn unshift(&mut self) -> Option<T>;
 }
 
-impl<T: Clone> UnshiftTrait<T> for Vec<T> {
+impl<T> UnshiftTrait<T> for Vec<T> {
     fn unshift(&mut self) -> Option<T> {
-        let first: Option<T> = match self.first() {
-            Some(value) => Some(value.clone().into()),
-            None => None
-        };
-
-        if first.is_some() {
-            self.remove(0);
+        if self.len() <= 0 {
+            return None
         }
 
-        return first;
+        Some(self.swap_remove(0))
     }
 }
