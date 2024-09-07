@@ -1,5 +1,5 @@
 use std::rc::Rc;
-use crate::queue::FIFOQueue;
+use crate::queues::FIFOQueue;
 use crate::test::TestContext;
 
 /// Type of procedures to go inside the Lists of the SuitContext struct

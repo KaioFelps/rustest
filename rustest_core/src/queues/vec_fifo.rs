@@ -1,15 +1,15 @@
 use crate::extension_traits::vec::UnshiftTrait;
 
-pub struct FIFOQueue<T> {
+pub struct VFIFOQueue<T> {
     list: Vec<T>
 }
 
-impl<T> FIFOQueue<T> {
+impl<T> VFIFOQueue<T> {
     /**-
-    Instantiates a new instance of FIFOQueue
-    */
+        Instantiates a new instance of VFIFOQueue
+     */
     pub fn new() -> Self {
-        FIFOQueue {
+        VFIFOQueue {
             list: Vec::new()
         }
     }
@@ -25,30 +25,22 @@ impl<T> FIFOQueue<T> {
 
     /**
     Adds a new element to the end of the queue.
-    */
+     */
     pub fn enqueue(&mut self, item: T) -> () {
         self.list.push(item);
     }
 
     /**
     Gets the next element from the queue without removing it.
-    */
+     */
     pub fn next(&self) -> Option<&T> {
         self.list.first()
     }
 
     /**
     Gets the size of the queue
-    */
+     */
     pub fn size(&self) -> usize {
         self.list.len()
-    }
-}
-
-impl<T> From<Vec<T>> for FIFOQueue<T> {
-    fn from(v: Vec<T>) -> Self {
-        FIFOQueue {
-            list: v
-        }
     }
 }

@@ -1,4 +1,7 @@
-pub fn main() -> () {}
+mod bench;
+
+pub fn main() -> () {
+}
 
 #[cfg(test)]
 mod tests {

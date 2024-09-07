@@ -1,4 +1,4 @@
-use crate::queue::FIFOQueue;
+use crate::queues::FIFOQueue;
 use crate::suit_context::SuitContext;
 use crate::test_error::TestError;
 
